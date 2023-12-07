@@ -6,8 +6,9 @@ import { useParams } from "react-router-dom";
 function Proyect() {
     const { slug } = useParams();
 	return(
-	<Layout >
+	// <Layout >
       <PaginaBlog slug={slug}/>
-	</Layout>)
+	// </Layout>)
+	)
 }
 export default Proyect

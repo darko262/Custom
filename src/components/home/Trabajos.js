@@ -46,11 +46,11 @@ export function Trabajos() {
         setParrafo(newParrafo)
     };
 
-    const sliderLeft= () => {
+    const sliderLeft = () => {
         var slider = document.getElementById('slider');
         slider.scrollLeft = slider.scrollLeft - 500;
     }
-    const sliderRight= () => {
+    const sliderRight = () => {
         var slider = document.getElementById('slider');
         slider.scrollLeft = slider.scrollLeft + 500;
     }
@@ -63,11 +63,11 @@ export function Trabajos() {
                 isMobile ? (
                     <section className=" relative flex items-center  justify-center  h-96 w-full py-6" >
 
-                        <div className="overflow-x-scroll  scroll-smooth whitespace-nowrap  h-full w-full scrollbar-hide  ">
+                        <div className="overflow-x-auto  scroll-smooth whitespace-nowrap  h-full w-full scrollbar-hide  ">
                             {proyect.map((proyect) => (
 
-                                <a href={`blog/${proyect.slug}`} className="relative w-[80%]  h-[89%] inline-block p-2 mx-2 bg-cover bg-center rounded-3xl transition-all ease-in-out " style={{ backgroundImage: `url(${proyect.thumbnail})` }}>
-                                {/* <a href={`blog/${proyect.slug}`} className="relative w-[80%]  h-[89%] inline-block p-2 mx-2 bg-cover bg-center rounded-3xl transition-all ease-in-out " style={{ backgroundImage: `url(${imagen3})` }}> */}
+                                // <a href={`blog/${proyect.slug}`} className="relative w-[80%]  h-[89%] inline-block p-2 mx-2 bg-cover bg-center rounded-3xl transition-all ease-in-out " style={{ backgroundImage: `url(${proyect.thumbnail})` }}>
+                                <a href={`blog/${proyect.slug}`} className="relative w-[80%]  h-[89%] inline-block p-2 mx-2 bg-cover bg-center rounded-3xl transition-all ease-in-out  snap-center" style={{ backgroundImage: `url(${imagen3})` }}>
                                     <div className="absolute bottom-0 left-0 p-2 text-white" key={proyect.id}>
                                         <h4>{proyect.title}</h4>
                                         {/* <p>{proyect.description}</p> */}
@@ -99,22 +99,24 @@ export function Trabajos() {
                                     {/* Contenido de la sección */}
                                     <MdOutlineChevronLeft size={40} onClick={sliderLeft} className=" cursor-pointer" />
                                     {/* Tarjetas en la esquina inferior derecha */}
-                                    <div  id="slider" className="overflow-x-scroll   scroll-smooth whitespace-nowrap  h-full w-full scrollbar-hide  ">
+                                    <div id="slider" className="overflow-x-auto  scroll-smooth whitespace-nowrap  h-full w-full scrollbar-hide  ">
+
                                         {proyect.map((proyect) => ((
                                             <Card
-                                                backgroundImage={`url(${proyect.thumbnail})`}
-                                                // backgroundImage={`url(${imagen3})`}
+                                                // backgroundImage={`url(${proyect.thumbnail})`}
+                                                backgroundImage={`url(${imagen3})`}
                                                 key={proyect.id}
-                                                onClick={() => handleCardClick(`${proyect.thumbnail}`, `${proyect.title}`, `${proyect.description}`)}
-                                                // onClick={() => handleCardClick(`${imagen3}`, `${proyect.title}`, `${proyect.description}`)}
+                                                // onClick={() => handleCardClick(`${proyect.thumbnail}`, `${proyect.title}`, `${proyect.description}`)}
+                                                onClick={() => handleCardClick(`${imagen3}`, `${proyect.title}`, `${proyect.description}`)}
                                             />
 
                                         ))
                                         )}
 
 
+
                                     </div>
-                                    <MdChevronRight size={40}  onClick={sliderRight} className=" cursor-pointer"/>
+                                    <MdChevronRight size={40} onClick={sliderRight} className=" cursor-pointer" />
                                 </div>
                             </div>
 

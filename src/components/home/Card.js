@@ -3,7 +3,7 @@ import React from 'react';
 const Card = ({ backgroundImage, onClick }) => {
   return (
     <div
-      className=" bg-cover bg-center  cursor-pointer rounded-3xl transition-all  ease-in-out relative w-[80%]  h-[100%] inline-block  mx-2 "
+      className=" bg-cover bg-center  cursor-pointer rounded-3xl transition-all  ease-in-out relative w-[80%]  h-[100%] inline-block  mx-2 snap-end"
       style={{ backgroundImage }}
       onClick={onClick}
     >
