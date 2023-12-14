@@ -5,7 +5,7 @@ import { SiBmw, SiHonda, SiKtm, SiDucati } from 'react-icons/si';
 
 export function HeroHome() {
     return (
-        <section className='h-screen relative  text-white  '>
+        <section className='h-screen relative  text-white   bg-fixed  bg-moto2 bg-center bg-no-repeat bg-cover'>
             <div className="h-full grid  grid-rows-7 md:grid-cols-7 md:grid-rows-1 rounded-3xl mx-auto w-[97%]  ">
                 <div className='h-full w-full md:col-span-3 row-span-3 flex items-center flex-col  justify-center  '>
                     <img src={fondo2} className=" w-44 h-44">

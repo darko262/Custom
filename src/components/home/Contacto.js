@@ -1,11 +1,19 @@
 import { CardPrecio, CardPrecioDos } from "./Card"
 import { useMediaQuery } from '@react-hook/media-query';
-import home from "../../assets/home.jpeg"
+
 
 export function Contancto() {
     return (
-        <section className="bg-cover bg-no-repeat bg-center grid md:grid-cols-2 md:grid-rows-1 grid-rows-5 grid-cols-1 lg:w-[90%] mx-auto pb-6"  >
-            <div className="bg-cover bg-no-repeat bg-right lg:bg-cente rounded-tl-3xl rounded-bl-3xl" style={{ backgroundImage: `url(${home})` }}>
+        <section className="bg-cover bg-no-repeat bg-center grid md:grid-cols-2 md:grid-rows-1 grid-rows-5 grid-cols-1 lg:w-[90%] mx-auto pb-6 "  >
+            <div className="bg-cover bg-no-repeat bg-right lg:bg-cente rounded-tl-3xl rounded-bl-3xl bg-home relative" >
+                <h2 className='bg-clip-text  hidden md:grid w-full  top-[90%] left-0    absolute text-center md:text-[4rem] lg:text-[6rem] text-xl  font-bold text-red-900   text-shadow-xl  uppercase '>
+                    custom
+
+                </h2>
+                <h2 className='bg-clip-text hidden md:grid w-full  bottom-0   absolute text-center md:text-[4rem] lg:text-[6rem] text-xl  font-bold text-white  text-shadow-xl  uppercase '>
+                    Garage
+
+                </h2>
 
 
             </div>
@@ -41,8 +49,8 @@ export function Precios() {
     return (
         <>
             {
-                isMobile ? (<section className="bg-transparent h-full  w-[90%]  mx-auto grid grid-rows-1  gap-5 " >
-                    <CardPrecio className=" hover:bg-red-600 md:hover:scale-110   before:bg-red-600   hover:z-20  "titulo="Reparaciones" />
+                isMobile ? (<section className="bg-transparent h-full  w-[90%]  mx-auto grid grid-rows-1  gap-5  " >
+                    <CardPrecio className=" hover:bg-red-600 md:hover:scale-110   before:bg-red-600   hover:z-20  " titulo="Reparaciones" />
                     <div className=" grid grid-cols-2 gap-2" >
                         <CardPrecioDos className=" hover:bg-yellow-600    " titulo="Mantencion" />
                         <CardPrecioDos className=" hover:bg-green-600     " titulo="Asesorias" />
@@ -50,11 +58,11 @@ export function Precios() {
                 </section>
 
                 ) : (
-                    <section className="bg-transparent h-full  w-[90%]  flex-row   justify-center  mx-auto   flex   ">
+                    <section className="bg-transparent h-full  w-[100%]  flex-row   justify-center  mx-auto   flex  bg-fondo2 bg-cover  bg-no-repeat bg-center bg-fixed ">
 
-                        <CardPrecio className=" hover:bg-red-600 hover:scale-110   before:bg-red-600   hover:z-20  "  titulo="Reparaciones"/>
+                        <CardPrecio className=" hover:bg-red-600 hover:scale-110   before:bg-red-600   hover:z-20  " titulo="Reparaciones" />
                         <CardPrecio className=" hover:bg-yellow-600   md:scale-110 md:hover:scale-125 before:bg-yellow-600  z-10" titulo="Mantencion" />
-                        <CardPrecio className=" hover:bg-green-600 hover:scale-110   before:bg-green-600  hover:z-20" titulo="Asesorias"/>
+                        <CardPrecio className=" hover:bg-green-600 hover:scale-110   before:bg-green-600  hover:z-20" titulo="Asesorias" />
 
 
 

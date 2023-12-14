@@ -8,12 +8,14 @@ import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from '@react-hook/media-query';
 import { getAllProyectos } from "../../api/Proyectos.api";
 import { MdChevronLeft, MdChevronRight, MdOutlineChevronLeft } from "react-icons/md"
+import { BoteneHome } from "../Botones/Botones";
 
 export function Trabajos() {
 
     const [backgroundImage, setBackgroundImage] = useState('');
     const [content, setContent] = useState('');
     const [parrafo, setParrafo] = useState('');
+    const [slug, setSlug] = useState('');
     const [proyect, setProyect] = useState([]);
 
 
@@ -30,6 +32,8 @@ export function Trabajos() {
             setBackgroundImage(`url("${primerProyecto.thumbnail}")`); // Coloca la imagen estática por defecto
             setContent(primerProyecto.title);
             setParrafo(primerProyecto.description);
+            setSlug(primerProyecto.slug);
+            
             setProyect(response.data.results.posts);
             console.log(response.data.results.posts);
 
@@ -40,19 +44,20 @@ export function Trabajos() {
     };
 
     // Manejar el clic en una tarjeta
-    const handleCardClick = (newBackgroundImage, newContent, newParrafo) => {
+    const handleCardClick = (newBackgroundImage, newContent, newParrafo, newSlug) => {
         setBackgroundImage(`url("${newBackgroundImage}")`);
         setContent(newContent);
-        setParrafo(newParrafo)
+        setParrafo(newParrafo);
+        setSlug(newSlug);
     };
 
     const sliderLeft = () => {
         var slider = document.getElementById('slider');
-        slider.scrollLeft = slider.scrollLeft - 500;
+        slider.scrollLeft = slider.scrollLeft - 300;
     }
     const sliderRight = () => {
         var slider = document.getElementById('slider');
-        slider.scrollLeft = slider.scrollLeft + 500;
+        slider.scrollLeft = slider.scrollLeft + 300;
     }
 
 
@@ -85,21 +90,45 @@ export function Trabajos() {
                 ) : (
                     <section className="grid lg:grid-cols-3 md:grid-cols-4 min-h-screen py-8 px-5" >
                         <div
-                            className="bg-cover bg-center lg:col-span-1  md:col-span-2   transition-all ease-in-out rounded-3xl "
-                            style={{ backgroundImage }}
+                            className="bg-cover bg-center lg:col-span-1  md:col-span-2 relative   transition-all ease-in-out rounded-3xl bg-[#FF0022]  h-full flex justify-center items-center "
+
                         >
+                            <div
+                                className="bg-cover bg-center  w-[80%] h-[80%]  transition-all ease-in-out rounded-3xl  border-4 border-black"
+                                style={{ backgroundImage }}
+                            >
+                            </div>
+                            <h2 className='bg-clip-text  hidden md:grid w-full  top-[90%] left-1/2  -translate-x-1/2 -translate-y-1/2 absolute text-center md:text-[6rem] text-xl  font-bold text-red-900   text-shadow-xl  uppercase '>
+                                custom 
+
+                            </h2>
+                            <h2 className='bg-clip-text hidden md:grid w-full  bottom-0  left-[53%]  -translate-x-[53%] -translate-y-1/2 absolute text-center md:text-[6rem] text-xl  font-bold text-white  text-shadow-xl  uppercase '>
+                                 Garage
+
+                            </h2>
                         </div>
                         <div className=" bg-cover bg-center col-span-2  text-white   "
                         >
                             <div className=" grid grid-rows-4 grid-cols-1 place-content-center h-full">
-                                <h1 className="text-3xl font-bold mb-4  justify-center flex items-center ">{content}</h1>
-                                <p className=" flex items-center justify-center w-[80%]  text-center m-auto transition-all  ease-in-out duration-150 ">{parrafo} </p>
 
-                                <div className="rounded-lg   row-span-2  flex items-center relative   ">
+                                <h2 className="text-5xl font-bold mb-4  justify-center flex flex-col items-center ">
+                                    <span className="text-red-600 text-xl underline decoration-4 ">
+                                        Proyecto
+                                    </span>{content}</h2>
+                                <p className=" flex flex-col  justify-center w-[80%]   m-auto transition-all  ease-in-out duration-150 gap-3 ">
+                                    <span className="text-red-600 text-xl underline decoration-4 ">
+                                        Proyecto
+                                    </span>{parrafo}
+
+                                    <BoteneHome  nombre=" Seguir leyendo" href={`blog/${slug}`}/>
+
+                                </p>
+
+                                <div className="rounded-lg   row-span-2  flex items-center relative gap-2   ">
                                     {/* Contenido de la sección */}
                                     <MdOutlineChevronLeft size={40} onClick={sliderLeft} className=" cursor-pointer" />
                                     {/* Tarjetas en la esquina inferior derecha */}
-                                    <div id="slider" className="overflow-x-auto  scroll-smooth whitespace-nowrap  h-full w-full scrollbar-hide  ">
+                                    <div id="slider" className="overflow-x-auto  snap-x scroll-smooth whitespace-nowrap  h-full w-full  scrollbar-hide  ">
 
                                         {proyect.map((proyect) => ((
                                             <Card
@@ -107,7 +136,7 @@ export function Trabajos() {
                                                 backgroundImage={`url(${imagen3})`}
                                                 key={proyect.id}
                                                 // onClick={() => handleCardClick(`${proyect.thumbnail}`, `${proyect.title}`, `${proyect.description}`)}
-                                                onClick={() => handleCardClick(`${imagen3}`, `${proyect.title}`, `${proyect.description}`)}
+                                                onClick={() => handleCardClick(`${imagen3}`, `${proyect.title}`, `${proyect.description}`,`${proyect.slug}`)}
                                             />
 
                                         ))

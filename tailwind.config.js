@@ -5,6 +5,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage:{
+        'fondo1' : "url(/src/assets/foto3.jpg)",
+        'fondo2' : "url(/src/assets/fondo.jpg)",
+        'moto2' : "url(/src/assets/moto2.jpg)",
+        'home' : "url(/src/assets/home.jpeg)",
+      },
+
+
+
       fontFamily:{
         rocket:['New Rocker']
       },

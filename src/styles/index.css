@@ -59,5 +59,23 @@
       }
     }
     
-    
+    .movimiento {
+      
+      animation: 35s movi  infinite linear; /* Ajusta la duración (2s) según tus necesidades */
+  }
+  
+  @keyframes movi {
+    0%{
+      transform: translateX(0);
+      }
+
+     
+    100%{
+        transform: translateX(-100%);
+       
+        
+        
+      }  
+  }
 }
+  
