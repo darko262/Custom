@@ -1,6 +1,6 @@
 import { SiBmw, SiHonda, SiKtm, SiDucati } from 'react-icons/si';
 import { motion } from 'framer-motion';
-import { BoteneHome } from '../Botones/Botones';
+import { BoteneHome, CarouselHome } from '../Botones/Botones';
 export function Hero() {
     return (
         <section className='h-screen relative  text-white  bg-fixed   max-w-screen overflow-x-hidden '>
@@ -21,56 +21,9 @@ export function Hero() {
                     </div>
 
                 </div>
-                {/* <div className=' lg:hidden md:h-[10rem] h-16 lg:h-full lg:w-1/5 w-full basis-2 absolute  bg-yellow-400  overflow-hidden flex items-center lg:flex-col flex-row  justify-center  top-1/2 lg:left-1/2  lg:-translate-x-1/2 -translate-y-1/2 lg:-skew-x-12  lg:-skew-y-0 skew-y-12   '>
-                    <div className=' lg:animate-none  h-full w-full whitespace-nowrap  flex flex-nowrap '>
-                        <SiBmw className=" w-10 md:w-[4rem]  mx-auto h-full fill-black  " alt="BMW Logo" />
-                        <SiHonda className=" w-10 md:w-[4rem]  mx-auto h-full fill-black " alt="Honda Logo" />
-                        <SiKtm className=" w-10 md:w-[4rem]  mx-auto h-full fill-black " alt="KTM Logo" />
-                        <SiDucati className=" w-10 md:w-[4rem]  mx-auto h-full fill-black " alt="Ducati Logo" />
-                        <SiBmw className=" w-10 md:w-[4rem]  mx-auto h-full fill-black  " alt="BMW Logo" />
-                        <SiHonda className=" w-10 md:w-[4rem]  mx-auto h-full fill-black " alt="Honda Logo" />
-                        <SiKtm className=" w-10 md:w-[4rem]  mx-auto h-full fill-black " alt="KTM Logo" />
-                        <SiDucati className=" w-10 md:w-[4rem]  mx-auto h-full fill-black " alt="Ducati Logo" />
-                        <SiBmw className=" w-10 md:w-[4rem]  mx-auto h-full fill-black  " alt="BMW Logo" />
-                        <SiHonda className=" w-10 md:w-[4rem]  mx-auto h-full fill-black " alt="Honda Logo" />
-                        <SiKtm className=" w-10 md:w-[4rem]  mx-auto h-full fill-black " alt="KTM Logo" />
-                        <SiDucati className=" w-10 md:w-[4rem]  mx-auto h-full fill-black " alt="Ducati Logo" />
-                        
-                    </div> */}
+             
                 <div className=' lg:hidden md:h-[10rem] h-16  w-full      bg-yellow-400  overflow-hidden  flex  z-10    skew-y-12 '>
-                    <div className=' movimiento  flex  flex-1 w-full '>
-                        <div className='  flex  flex-nowrap '>
-                            <SiBmw className=" w-10 md:w-[4rem]   mx-2 h-full fill-black  " alt="BMW Logo" />
-                            <SiHonda className=" w-10 md:w-[4rem]   mx-2 h-full fill-black " alt="Honda Logo" />
-                            <SiKtm className=" w-10 md:w-[4rem]   mx-2 h-full fill-black " alt="KTM Logo" />
-                            <SiDucati className=" w-10 md:w-[4rem]   mx-2 h-full fill-black " alt="Ducati Logo" />
-                            <SiBmw className=" w-10 md:w-[4rem]   mx-2 h-full fill-black  " alt="BMW Logo" />
-                            <SiHonda className=" w-10 md:w-[4rem]   mx-2 h-full fill-black " alt="Honda Logo" />
-                            <SiKtm className=" w-10 md:w-[4rem]   mx-2 h-full fill-black " alt="KTM Logo" />
-                            <SiDucati className=" w-10 md:w-[4rem]   mx-2 h-full fill-black " alt="Ducati Logo" />
-                            <SiBmw className=" w-10 md:w-[4rem]   mx-2 h-full fill-black  " alt="BMW Logo" />
-                            <SiHonda className=" w-10 md:w-[4rem]   mx-2 h-full fill-black " alt="Honda Logo" />
-                            <SiKtm className=" w-10 md:w-[4rem]   mx-2 h-full fill-black " alt="KTM Logo" />
-                            <SiDucati className=" w-10 md:w-[4rem]   mx-2 h-full fill-black " alt="Ducati Logo" />
-
-                        </div>
-                        <div className='   flex  flex-nowrap '>
-                            <SiBmw className=" w-10 md:w-[4rem]   mx-2 h-full fill-black  " alt="BMW Logo" />
-                            <SiHonda className=" w-10 md:w-[4rem]   mx-2 h-full fill-black " alt="Honda Logo" />
-                            <SiKtm className=" w-10 md:w-[4rem]   mx-2 h-full fill-black " alt="KTM Logo" />
-                            <SiDucati className=" w-10 md:w-[4rem]   mx-2 h-full fill-black " alt="Ducati Logo" />
-                            <SiBmw className=" w-10 md:w-[4rem]   mx-2 h-full fill-black  " alt="BMW Logo" />
-                            <SiHonda className=" w-10 md:w-[4rem]   mx-2 h-full fill-black " alt="Honda Logo" />
-                            <SiKtm className=" w-10 md:w-[4rem]   mx-2 h-full fill-black " alt="KTM Logo" />
-                            <SiDucati className=" w-10 md:w-[4rem]   mx-2 h-full fill-black " alt="Ducati Logo" />
-                            <SiBmw className=" w-10 md:w-[4rem]   mx-2 h-full fill-black  " alt="BMW Logo" />
-                            <SiHonda className=" w-10 md:w-[4rem]   mx-2 h-full fill-black " alt="Honda Logo" />
-                            <SiKtm className=" w-10 md:w-[4rem]   mx-2 h-full fill-black " alt="KTM Logo" />
-                            <SiDucati className=" w-10 md:w-[4rem]   mx-2 h-full fill-black " alt="Ducati Logo" />
-
-                        </div>
-                    </div>
-
+                    <CarouselHome />
                 </div>
                 <h1 className='bg-clip-text  hidden lg:grid w-full top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2 absolute text-center lg:text-[6rem] text-xl  font-bold text-red-900   text-shadow-xl  uppercase '>
                     custom Garage
