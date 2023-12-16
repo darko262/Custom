@@ -1,8 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ed341bd4.css",
-    "main.js": "/static/js/main.5a8f2ebe.js",
-    "static/media/fondo2new.png": "/static/media/fondo2new.e33f74de9d85a7291753.png",
+    "main.css": "/static/css/main.5a820e09.css",
+    "main.js": "/static/js/main.cc8734f9.js",
     "static/media/fondo.jpg": "/static/media/fondo.b9d395be5cf5fc66b285.jpg",
     "static/media/foto2.jpg": "/static/media/foto2.e29b951f3518a69dd766.jpg",
     "static/media/foto4.jpg": "/static/media/foto4.57647440c7502973c440.jpg",
@@ -11,16 +10,17 @@
     "static/media/foto1.jpg": "/static/media/foto1.e1212685a4d660336b8a.jpg",
     "static/media/frente.jpg": "/static/media/frente.ecce0a1c89f9eb0ae8d0.jpg",
     "static/media/about.jpg": "/static/media/about.2cbfd9730884188aeb3b.jpg",
+    "static/media/moto2.jpg": "/static/media/moto2.f0af0437a38bc7cf6d51.jpg",
     "static/media/home.jpeg": "/static/media/home.49ffaca98655dd91f855.jpeg",
     "static/media/tienda.jpeg": "/static/media/tienda.24ec808e2d4d1566f3b3.jpeg",
     "static/media/error.jpeg": "/static/media/error.1d2d1e7736667b5fa137.jpeg",
     "static/media/fondosvg.svg": "/static/media/fondosvg.e4095fa3997348589a55155ce4709a3a.svg",
     "index.html": "/index.html",
-    "main.ed341bd4.css.map": "/static/css/main.ed341bd4.css.map",
-    "main.5a8f2ebe.js.map": "/static/js/main.5a8f2ebe.js.map"
+    "main.5a820e09.css.map": "/static/css/main.5a820e09.css.map",
+    "main.cc8734f9.js.map": "/static/js/main.cc8734f9.js.map"
   },
   "entrypoints": [
-    "static/css/main.ed341bd4.css",
-    "static/js/main.5a8f2ebe.js"
+    "static/css/main.5a820e09.css",
+    "static/js/main.cc8734f9.js"
   ]
 }
