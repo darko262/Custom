@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from '@react-hook/media-query';
 import { getAllProyectos } from "../../api/Proyectos.api";
 import { MdChevronRight, MdOutlineChevronLeft } from "react-icons/md"
-import {  BoteneHomeDos } from "../Botones/Botones";
+import { BoteneHomeDos } from "../Botones/Botones";
 
 export function Trabajos() {
 
@@ -30,7 +30,7 @@ export function Trabajos() {
             setContent(primerProyecto.title);
             setParrafo(primerProyecto.description);
             setSlug(primerProyecto.slug);
-            
+
             setProyect(response.data.results.posts);
             console.log(response.data.results.posts);
 
@@ -63,13 +63,16 @@ export function Trabajos() {
         <>
             {
                 isMobile ? (
-                    <section className=" relative flex items-center  justify-center  h-96 w-full py-6" >
+                    <section className=" relative grid grid-cols-1 grid-rows-6    h-96 w-full py-6  place-items-start " >
+                        <span className="text-red-600 text-xl underline decoration-2 row-span-1 mx-2 ">
+                            Proyectos Recientes
+                        </span>
+                        <div className="overflow-x-auto  scroll-smooth whitespace-nowrap  h-full w-full scrollbar-hide row-span-5 ">
 
-                        <div className="overflow-x-auto  scroll-smooth whitespace-nowrap  h-full w-full scrollbar-hide  ">
                             {proyect.map((proyect) => (
 
                                 <a href={`blog/${proyect.slug}`} className="relative w-[80%]  h-[89%] inline-block p-2 mx-2 bg-cover bg-center rounded-3xl transition-all ease-in-out " style={{ backgroundImage: `url(${proyect.thumbnail})` }}>
-                                {/* <a href={`blog/${proyect.slug}`} className="relative w-[80%]  h-[89%] inline-block p-2 mx-2 bg-cover bg-center rounded-3xl transition-all ease-in-out  snap-center" style={{ backgroundImage: `url(${imagen3})` }}> */}
+                                    {/* <a href={`blog/${proyect.slug}`} className="relative w-[80%]  h-[89%] inline-block p-2 mx-2 bg-cover bg-center rounded-3xl transition-all ease-in-out  snap-center" style={{ backgroundImage: `url(https://tallermoto.pythonanywhere.com/media/blog/Moto%202/moto1.jpg)` }}> */}
                                     <div className="absolute bottom-0 left-0 p-2 text-white" key={proyect.id}>
                                         <h4>{proyect.title}</h4>
                                         {/* <p>{proyect.description}</p> */}
@@ -96,11 +99,11 @@ export function Trabajos() {
                             >
                             </div>
                             <h2 className='bg-clip-text  hidden md:grid w-full  top-[90%] left-1/2  -translate-x-1/2 -translate-y-1/2 absolute text-center md:text-[6rem] text-xl  font-bold text-red-900   text-shadow-xl  uppercase '>
-                                custom 
+                                custom
 
                             </h2>
                             <h2 className='bg-clip-text hidden md:grid w-full  bottom-0  left-[53%]  -translate-x-[53%] -translate-y-1/2 absolute text-center md:text-[6rem] text-xl  font-bold text-white  text-shadow-xl  uppercase '>
-                                 Garage
+                                Garage
 
                             </h2>
                         </div>
@@ -117,7 +120,7 @@ export function Trabajos() {
                                         Proyecto
                                     </span>{parrafo}
 
-                                    <BoteneHomeDos  nombre=" Seguir leyendo" href={`blog/${slug}`}/>
+                                    <BoteneHomeDos nombre=" Seguir leyendo" href={`blog/${slug}`} />
 
                                 </p>
 
@@ -132,8 +135,8 @@ export function Trabajos() {
                                                 backgroundImage={`url(${proyect.thumbnail})`}
                                                 // backgroundImage={`url(${imagen3})`}
                                                 key={proyect.id}
-                                                onClick={() => handleCardClick(`${proyect.thumbnail}`, `${proyect.title}`, `${proyect.description} `,`${proyect.slug}`)}
-                                                // onClick={() => handleCardClick(`${imagen3}`, `${proyect.title}`, `${proyect.description}`,`${proyect.slug}`)}
+                                                onClick={() => handleCardClick(`${proyect.thumbnail}`, `${proyect.title}`, `${proyect.description} `, `${proyect.slug}`)}
+                                            // onClick={() => handleCardClick(`${imagen3}`, `${proyect.title}`, `${proyect.description}`,`${proyect.slug}`)}
                                             />
 
                                         ))

@@ -61,7 +61,7 @@
     
     .movimiento {
       
-      animation: 35s movi  infinite linear; /* Ajusta la duración (2s) según tus necesidades */
+      animation: 30s movi  infinite linear; /* Ajusta la duración (2s) según tus necesidades */
   }
   
   @keyframes movi {
@@ -76,4 +76,5 @@
       }  
   }
 }
+
   

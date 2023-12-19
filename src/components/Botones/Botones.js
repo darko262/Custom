@@ -37,26 +37,24 @@ export const CarouselHome = (props) => {
             <SiBmw className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-8 lg:mx-14 fill-black " alt="Ducati Logo" />
             <SiDucati className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-8 lg:mx-14 fill-black  " alt="BMW Logo" />
 
+        </div>
 
-            {/*<SiHonda className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-6 fill-black " alt="Honda Logo" />
-                <SiKtm className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-6 fill-black " alt="KTM Logo" />
-                <SiDucati className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-6 fill-black " alt="Ducati Logo" />
-                <SiBmw className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-6 fill-black  " alt="BMW Logo" />
-                <SiHonda className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-6 fill-black " alt="Honda Logo" />
-                <SiKtm className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-6 fill-black " alt="KTM Logo" />
-                <SiDucati className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-6 fill-black " alt="Ducati Logo" />
-                <SiBmw className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-6 fill-black  " alt="BMW Logo" />
-                <SiHonda className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-6 fill-black " alt="Honda Logo" />
-                <SiKtm className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-6 fill-black " alt="KTM Logo" />
-                <SiDucati className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-6 fill-black " alt="Ducati Logo" />
-                <SiBmw className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-6 fill-black  " alt="BMW Logo" />
-                <SiHonda className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-6 fill-black " alt="Honda Logo" />
-                <SiKtm className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-6 fill-black " alt="KTM Logo" />
-                <SiDucati className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-6 fill-black " alt="Ducati Logo" />
-                <SiBmw className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-6 fill-black  " alt="BMW Logo" />
-                <SiHonda className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-6 fill-black " alt="Honda Logo" />
-                <SiKtm className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-6 fill-black " alt="KTM Logo" />
-                <SiDucati className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-6 fill-black " alt="Ducati Logo" /> */}
+
+    )
+}
+export const CarouselHomeDos = (props) => {
+    // const { children } = props;
+    return (
+
+        <div className='   flex     movimientoDos    '>
+
+            <SiBmw className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-8 lg:mx-14 fill-black  " alt="BMW Logo" />
+            <SiHonda className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-8 lg:mx-14 fill-black " alt="Honda Logo" />
+            <SiKtm className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-8 lg:mx-14 fill-black " alt="KTM Logo" />
+            <SiDucati className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-8 lg:mx-14 fill-black " alt="Ducati Logo" />
+            <SiYamahamotorcorporation className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-8 lg:mx-14 fill-black  " alt="BMW Logo" />
+            <SiBmw className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-8 lg:mx-14 fill-black " alt="Ducati Logo" />
+            <SiDucati className=" w-10 md:w-[4rem]   mx-2 h-full md:mx-8 lg:mx-14 fill-black  " alt="BMW Logo" />
 
         </div>
 

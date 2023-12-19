@@ -1,7 +1,7 @@
 
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { useState, useEffect } from 'react';
-
+import icono from '../../assets/Custom.ico'
 // import { useMediaQuery } from '@react-hook/media-query';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -57,7 +57,7 @@ export default function Navbar() {
             >
                 <motion.div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto ">
                     <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-                        <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
+                        <img src={icono} className="h-8" alt="Flowbite Logo" />
                         <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Custom Garage</span>
                     </a>
                     <button onClick={handleNav} className="md:hidden rounded-full  transition-all ease-in-out duration-300 z-10 ">
