@@ -1,14 +1,14 @@
 import axios from 'axios';
 
-export const getAllProyectos = () =>{
-    
-    return axios.get(`http://127.0.0.1:8000/api/blog/list`)
-    
 
-}
+// Usa process.env para acceder a la variable de entorno
+export const getAllProyectos = () => {
+  return axios.get(`${process.env.REACT_APP_API_URL}/api/blog/list`);
+};
+
 export const getProyecto = (slug) =>{
     const parametro = slug.slug
-    return axios.get(`http://127.0.0.1:8000/api/blog/detail/${parametro}`)
+    return axios.get(`${process.env.REACT_APP_API_URL}/api/blog/detail/${parametro}`)
     
     
 

@@ -14,12 +14,16 @@ import os
 import environ
 from decouple import config
 env = environ.Env()
-environ.Env.read_env()
+# environ.Env.read_env()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+environ.Env.read_env(os.path.join(BASE_DIR, 'core/.env'))
+# print(environ.Env.read_env(os.path.join(BASE_DIR, '.env')))
 
+# print(BASE_DIR)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -27,10 +31,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG =config('DEBUG')
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOST_DEV')
-
+ALLOWED_HOSTS = config('ALLOWED_HOST_DEV', cast=lambda v: [s.strip() for s in v.split(',')])
+# ALLOWED_HOSTS = ['127.0.0.1','127.0.0.1:8000', 'tallermoto.pythonanywhere.com']
 
 # Application definition
 DJANGO_APPS = [
@@ -146,8 +150,12 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ]
 }
-CORS_ORIGIN_WHITELIST =['http://localhost:3000']
-CORS_ALLOWED_ORIGINS = ['http://localhost:3000' ]
+
+CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST')
+
+CORS_ALLOWED_ORIGINS  =env.list('CORS_ALLOWED_ORIGINS')
+
+# CORS_ALLOWED_ORIGINS =
 # CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED_ORIGINS_DEV', '').split(',')
 # CORS_ORIGIN_WHITELIST = config('CORS_ORIGIN_WHITELIST_DEV', default='')
 

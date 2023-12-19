@@ -1,6 +1,6 @@
 
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { useMediaQuery } from '@react-hook/media-query';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -11,7 +11,7 @@ export default function Navbar() {
 
     const [nav, setNav] = useState(true)
     //     const [Navbar, setNavBar] = useState(false)
-    console.log(nav)
+    // console.log(nav)
     const variants = {
         open: {
             opacity: 1,
@@ -22,7 +22,15 @@ export default function Navbar() {
             transition: { ease: "easeInOut", duration: 0.75 }
         },
     }
+    // console.log(document.documentElement.scrollTop)
 
+    useEffect(() => {
+        
+        if (document.documentElement.scrollTop <= 0) {
+            document.getElementById('navbar').classList.remove('shadow-navbar');
+            document.getElementById('navbar').classList.remove('bg-black');
+        }
+    }, [])
     const handleNav = () => {
         setNav(!nav)
     }
@@ -33,6 +41,7 @@ export default function Navbar() {
             if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
                 document.getElementById('navbar').classList.add('shadow-navbar');
                 document.getElementById('navbar').classList.add('bg-black');
+                
 
             } else {
                 document.getElementById('navbar').classList.remove('shadow-navbar');
@@ -46,7 +55,7 @@ export default function Navbar() {
         <AnimatePresence>
             <nav id='navbar' className="w-full py-6 top-0 transition duration-500 ease-in-out z-40 fixed bg-black  px-2"
             >
-                <motion.div  className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto ">
+                <motion.div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto ">
                     <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
                         <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
                         <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Custom Garage</span>
