@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import icono from '../../assets/Custom.ico'
 // import { useMediaQuery } from '@react-hook/media-query';
 import { motion, AnimatePresence } from 'framer-motion';
+import { BoteneHomeDos, CarouselHome } from '../Botones/Botones';
 
 
 
@@ -69,13 +70,15 @@ export default function Navbar() {
                             animate={!nav ? "open" : "closed"}
                             variants={variants}
                         >
-                            <div className="uppercase p-4 grid grid-cols-1  grid-rows-4 text-center content-center h-full w-full  place-items-center text-white">
-
-                                <a href="/"  >Home</a>
-                                <a href="/about"  >about</a>
+                            <div className="uppercase p-4 flex flex-col  text-center justify-center content-center h-full w-full   text-white bg-fondo2 bg-cover bg-no-repeat bg-left  ">
+                                {/* <img src={icono} className=' h-auto w-11/12 mx-auto  '></img> */}
+                                <div className=' grid grid-cols-1  grid-rows-4 gap-4  '>
+                                <BoteneHomeDos nombre="Principal" href="/" />
+                                <BoteneHomeDos nombre="About us" href="about" />
                                 {/* <BtnNav href="Servicios" ruta="service" /> */}
-                                <a href="/blog"  >blog</a>
-
+                                <BoteneHomeDos nombre="Blog" href="blog" />
+                                <BoteneHomeDos nombre="Tienda" href="tienda" />
+                                </div>
 
 
                             </div>
