@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { getProyecto } from '../../api/Proyectos.api';
 import { motion } from 'framer-motion';
 import { BiSolidLike, BiSolidDislike } from "react-icons/bi";
+import DOMPurify from 'dompurify'
 
 import { useNavigate } from 'react-router-dom'; // Utiliza useNavigate en lugar de useHistory
 
@@ -51,18 +52,18 @@ export function PaginaBlog(slug) {
 
             className=" relative grid grid-rows-2 grid-cols-1 h-screen w-full  ">
             <div className='  h-full w-full relative bg-black flex items-center text-white bg-cover bg-center justify-center text-center' style={{ backgroundImage: `url(${proyecto.thumbnail})` }}>
-            {/* <div className=' relative  h-full w-full bg-black flex items-center text-white bg-cover bg-center justify-center text-center' style={{ backgroundImage: `url(${imagen})` }}> */}
+                {/* <div className=' relative  h-full w-full bg-black flex items-center text-white bg-cover bg-center justify-center text-center' style={{ backgroundImage: `url(${imagen})` }}> */}
                 <h1 className=' text-3xl backdrop-grayscale bg-black/70 rounded-[1rem] w-full md:w-[60%]  font-rocket '>{proyecto.title}
                     <h2 className=' font-mono text-lg lg:text-3xl'> {proyecto.description}</h2>
                 </h1>
 
 
-            <div className=' absolute w-52  h-20 backdrop-grayscale bg-[#FF0022]/20 bottom-0 rounded-3xl  grid grid-cols-2  place-items-center'>
-            <BiSolidLike size={40} className='hover:scale-110 hover:fill-yellow-400'/>
-            <BiSolidDislike  size={40} className='hover:scale-110 hover:fill-yellow-400'/>
+                <div className=' absolute w-52  h-20 backdrop-grayscale bg-[#FF0022]/20 bottom-0 rounded-3xl  grid grid-cols-2  place-items-center'>
+                    <BiSolidLike size={40} className='hover:scale-110 hover:fill-yellow-400' />
+                    <BiSolidDislike size={40} className='hover:scale-110 hover:fill-yellow-400' />
 
 
-            </div>
+                </div>
 
             </div>
 
@@ -70,9 +71,10 @@ export function PaginaBlog(slug) {
                 <h3 className='text-[#FF0022] text-5xl md:text-8xl font-rocket   flex  justify-center row-span-1  '>
                     {proyecto.title}
                 </h3>
-                <p className='text-sm lg:text-xl px-2 text-white'>
-                    {proyecto.content}
-                </p>
+
+
+                <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(proyecto.content) }} className='text-sm lg:text-xl px-2 text-white' />
+
             </div>
 
 
