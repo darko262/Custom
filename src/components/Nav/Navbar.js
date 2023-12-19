@@ -1,10 +1,10 @@
 
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
-import { useMediaQuery } from '@react-hook/media-query';
+
+// import { useMediaQuery } from '@react-hook/media-query';
 import { motion, AnimatePresence } from 'framer-motion';
-import { easeInOut } from 'framer-motion';
+
 
 
 export default function Navbar() {
@@ -25,7 +25,7 @@ export default function Navbar() {
     // console.log(document.documentElement.scrollTop)
 
     useEffect(() => {
-        
+
         if (document.documentElement.scrollTop <= 0) {
             document.getElementById('navbar').classList.remove('shadow-navbar');
             document.getElementById('navbar').classList.remove('bg-black');
@@ -41,7 +41,7 @@ export default function Navbar() {
             if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
                 document.getElementById('navbar').classList.add('shadow-navbar');
                 document.getElementById('navbar').classList.add('bg-black');
-                
+
 
             } else {
                 document.getElementById('navbar').classList.remove('shadow-navbar');
@@ -50,7 +50,7 @@ export default function Navbar() {
             }
         }
     }
-    const isMobile = useMediaQuery('(max-width: 1124px)');
+    // const isMobile = useMediaQuery('(max-width: 1124px)');
     return (
         <AnimatePresence>
             <nav id='navbar' className="w-full py-6 top-0 transition duration-500 ease-in-out z-40 fixed bg-black  px-2"
@@ -69,14 +69,13 @@ export default function Navbar() {
                             animate={!nav ? "open" : "closed"}
                             variants={variants}
                         >
-                            <div className="uppercase p-4 grid grid-cols-1  grid-rows-2 text-center content-center h-full w-full justify-items-center text-white">
-                                <a href='/' className=" h-20  w-32  "></a>
-                                <div className=" grid  ">
-                                    <a href="/"  >Home</a>
-                                    <a href="/about"  >about</a>
-                                    {/* <BtnNav href="Servicios" ruta="service" /> */}
-                                    <a href="/blog"  >blog</a>
-                                </div>
+                            <div className="uppercase p-4 grid grid-cols-1  grid-rows-4 text-center content-center h-full w-full  place-items-center text-white">
+
+                                <a href="/"  >Home</a>
+                                <a href="/about"  >about</a>
+                                {/* <BtnNav href="Servicios" ruta="service" /> */}
+                                <a href="/blog"  >blog</a>
+
 
 
                             </div>

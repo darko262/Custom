@@ -50,8 +50,8 @@ export function PaginaBlog(slug) {
             exit={{ opacity: 0 }}
 
             className=" relative grid grid-rows-2 grid-cols-1 h-screen w-full  ">
-            {/* <div className='  h-full w-full bg-black flex items-center text-white bg-cover bg-center justify-center text-center' style={{ backgroundImage: `url(${proyecto.thumbnail})` }}> */}
-            <div className=' relative  h-full w-full bg-black flex items-center text-white bg-cover bg-center justify-center text-center' style={{ backgroundImage: `url(${imagen})` }}>
+            <div className='  h-full w-full bg-black flex items-center text-white bg-cover bg-center justify-center text-center' style={{ backgroundImage: `url(${proyecto.thumbnail})` }}>
+            {/* <div className=' relative  h-full w-full bg-black flex items-center text-white bg-cover bg-center justify-center text-center' style={{ backgroundImage: `url(${imagen})` }}> */}
                 <h1 className=' text-3xl backdrop-grayscale bg-black/70 rounded-[1rem] w-full md:w-[60%]  font-rocket '>{proyecto.title}
                     <h2 className=' font-mono text-lg lg:text-3xl'> {proyecto.description}</h2>
                 </h1>

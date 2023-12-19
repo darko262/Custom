@@ -1,6 +1,5 @@
-import { SiBmw, SiHonda, SiKtm, SiDucati } from 'react-icons/si';
-import { motion } from 'framer-motion';
-import { BoteneHome, CarouselHome } from '../Botones/Botones';
+
+import {  BoteneHomeDos, CarouselHome } from '../Botones/Botones';
 export function Hero() {
     return (
         <section className='h-screen relative  text-white  bg-fixed   max-w-screen overflow-x-hidden '>
@@ -20,7 +19,7 @@ export function Hero() {
 
 
                 <div className='h-[50vh]   w-full  flex  flex-col   justify-center items-center  py-5  mx-5 z-10'>
-                    <h1 className='bg-clip-text    w-full  text-center lg:text-[6rem]  text-5xl font-rocket  font-bold text-orange-700   text-shadow-xl  uppercase '>
+                    <h1 className='bg-clip-text    w-full  text-center lg:text-[6rem]  text-5xl font-rocket  font-bold text-orange-700   text-shadow-xl  uppercase  '>
                         custom Garage
 
                     </h1>
@@ -31,8 +30,8 @@ export function Hero() {
                     </h2>
 
                     <div className=' grid md:grid-cols-2 grid-cols-1 gap-3 py-2' >
-                        <BoteneHome nombre="About us" href="about" />
-                        <BoteneHome nombre=" Proyectos" href="blog" />
+                        <BoteneHomeDos nombre="About us" href="about" />
+                        <BoteneHomeDos nombre=" Proyectos" href="blog" />
 
                     </div>
 

@@ -5,7 +5,6 @@ import { About } from '../../components/home/AboutService'
 import { Trabajos } from '../../components/home/Trabajos'
 import { motion as m } from 'framer-motion'
 
-import { useEffect } from "react"
 
 function Home() {
 	// useEffect(()=>{

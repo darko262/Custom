@@ -1,6 +1,6 @@
 
 import imagen from "../../assets/foto3.jpg"
-import fondofull from "../../assets/fondosvg.svg"
+
 export function Cardwork() {
     return (
 

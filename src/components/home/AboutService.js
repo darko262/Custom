@@ -2,7 +2,7 @@ import myImage from "../../assets/foto1.jpg"
 import myImage2 from "../../assets/about.jpg"
 import myImage3 from "../../assets/foto3.jpg"
 import myImage4 from "../../assets/foto4.jpg"
-import { BoteneHome } from "../Botones/Botones"
+import { BoteneHomeDos } from "../Botones/Botones"
 
 export function About() {
     return (
@@ -11,22 +11,22 @@ export function About() {
             <div className="grid md:grid-cols-2 md:grid-rows-3 grid-rows-2 grid-cols-3  gap-3 max-h-screen md:order-1 order-2   ">
                 <img
                     src={myImage}
-                    alt='banner image'
+                    alt='banner '
                     className='h-full w-full object-cover object-center MejorFondo'
                 />
                 <img
                     src={myImage2}
-                    alt='banner image'
+                    alt='banner '
                     className='h-full w-full md:row-span-2 col-span-2 md:col-span-1 object-cover  object-right-bottom MejorFondo'
                 />
                 <img
                     src={myImage3}
-                    alt='banner image'
+                    alt='banner '
                     className='h-full w-full  md:row-span-2 md:col-span-1 col-span-2 object-cover MejorFondo '
                 />
                 <img
                     src={myImage4}
-                    alt='banner image'
+                    alt='banner '
                     className='h-full w-full  object-cover MejorFondo '
                 />
             </div>
@@ -45,7 +45,7 @@ export function About() {
                         vero distinctio dignissimos consequatur? Excepturi quibusdam, quam ipsum hic, laudantium
                         ducimus suscipit, culpa facere consequuntur repellat delectus.
                     </p>
-                    <BoteneHome nombre="Seguir leyendo" href="about"/>
+                    <BoteneHomeDos nombre="Seguir leyendo" href="about"/>
                 </div>
 
             </div>

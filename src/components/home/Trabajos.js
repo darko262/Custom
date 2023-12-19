@@ -1,14 +1,11 @@
-import { Cardwork } from "../BoxCard/CardRecientes";
-import imagen from "../../assets/foto3.jpg"
-import imagen2 from "../../assets/foto1.jpg"
-import imagen3 from "../../assets/frente.jpg"
-import { Card, CardMovil } from '../home/Card';
+
+import { Card } from '../home/Card';
 
 import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from '@react-hook/media-query';
 import { getAllProyectos } from "../../api/Proyectos.api";
-import { MdChevronLeft, MdChevronRight, MdOutlineChevronLeft } from "react-icons/md"
-import { BoteneHome } from "../Botones/Botones";
+import { MdChevronRight, MdOutlineChevronLeft } from "react-icons/md"
+import {  BoteneHomeDos } from "../Botones/Botones";
 
 export function Trabajos() {
 
@@ -120,13 +117,13 @@ export function Trabajos() {
                                         Proyecto
                                     </span>{parrafo}
 
-                                    <BoteneHome  nombre=" Seguir leyendo" href={`blog/${slug}`}/>
+                                    <BoteneHomeDos  nombre=" Seguir leyendo" href={`blog/${slug}`}/>
 
                                 </p>
 
                                 <div className="rounded-lg   row-span-2  flex items-center relative gap-2   ">
                                     {/* Contenido de la sección */}
-                                    <MdOutlineChevronLeft size={40} onClick={sliderLeft} className=" cursor-pointer" />
+                                    <MdOutlineChevronLeft size={40} onClick={sliderLeft} className=" cursor-pointer hidden lg:block" />
                                     {/* Tarjetas en la esquina inferior derecha */}
                                     <div id="slider" className="overflow-x-auto  snap-x scroll-smooth whitespace-nowrap  h-full w-full  scrollbar-hide  ">
 
@@ -145,7 +142,7 @@ export function Trabajos() {
 
 
                                     </div>
-                                    <MdChevronRight size={40} onClick={sliderRight} className=" cursor-pointer" />
+                                    <MdChevronRight size={40} onClick={sliderRight} className=" cursor-pointer hidden lg:block" />
                                 </div>
                             </div>
 

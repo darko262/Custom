@@ -1,5 +1,4 @@
 
-import { Footer } from '../../components/Nav/Footer'
 import { HeroAbout } from '../../components/About/HeroAbout'
 import { motion as m } from 'framer-motion'
 function About() {

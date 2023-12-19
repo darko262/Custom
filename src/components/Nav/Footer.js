@@ -10,31 +10,25 @@ export function Footer() {
                     <img src={myImage2} alt='Una descripción de mi imagen.' className=' h-16 w-16' />
                     Custom Garage
                 </a>
-                <p className="my-6 justify-end  text-white font-extrabold">Open-source library of over 400+ web components and interactive elements built for better web.</p>
+                <p className="my-6 justify-end  text-white font-extrabold uppercase">  el mejor taller para motocicletas en temuco.</p>
                 <ul className="flex flex-wrap justify-center items-center mb-6   ">
-                    <li>
-                        <a href="#" className="mr-4 hover:underline md:mr-6 ">About</a>
+                <li>
+                        <a href="/" className="mr-4 hover:underline md:mr-6">Home</a>
                     </li>
                     <li>
-                        <a href="#" className="mr-4 hover:underline md:mr-6">Premium</a>
+                        <a href="about/" className="mr-4 hover:underline md:mr-6 ">About</a>
                     </li>
+                   
+                  
                     <li>
-                        <a href="#" className="mr-4 hover:underline md:mr-6 ">Campaigns</a>
+                        <a href="blog/" className="mr-4 hover:underline md:mr-6">Blog</a>
                     </li>
+                    
                     <li>
-                        <a href="#" className="mr-4 hover:underline md:mr-6">Blog</a>
-                    </li>
-                    <li>
-                        <a href="#" className="mr-4 hover:underline md:mr-6">Affiliate Program</a>
-                    </li>
-                    <li>
-                        <a href="#" className="mr-4 hover:underline md:mr-6">FAQs</a>
-                    </li>
-                    <li>
-                        <a href="#" className="mr-4 hover:underline md:mr-6">Contact</a>
+                        <a href="contacto/" className="mr-4 hover:underline md:mr-6">Contact</a>
                     </li>
                 </ul>
-                <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#" className="hover:underline">CogniBot</a>. All Rights Reserved.</span>
+                <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://www.cognibot.dev" className="hover:underline">CogniBot</a>. All Rights Reserved.</span>
             </div>
         </footer>
 
