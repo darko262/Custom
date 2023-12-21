@@ -21,6 +21,8 @@ class PostSerializer(serializers.ModelSerializer):
             'time_read',
             'published',
             'views',
+            'category',
+            'marca',
           
         ]
 
@@ -43,4 +45,6 @@ class PostListSerializer(serializers.ModelSerializer):
             'time_read',
             'published',
             'views',
+            'category',
+            'marca',
         ]

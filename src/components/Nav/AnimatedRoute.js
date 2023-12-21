@@ -7,6 +7,7 @@ import About from "../../container/pages/about";
 import Proyect from "../../container/pages/proyectos";
 import Error from "../../container/erros/error";
 import Tienda from "../../container/pages/tienda";
+import Category from "../../container/pages/Category";
 import { AnimatePresence } from "framer-motion";
 
 export  default function AmimatedRoutes() {
@@ -21,6 +22,7 @@ export  default function AmimatedRoutes() {
                 <Route path="tienda" element={<Tienda />}></Route>
                 <Route path="about" element={<About />}></Route>
                 <Route path="/blog/:slug" element={<Proyect />}></Route>
+                <Route path="/category/:slug" element={<Category />} />
             </Routes>
         </AnimatePresence>
 

@@ -30,3 +30,13 @@ class ViewCount(models.Model):
 
     def __str__(self):
         return f"{self.ip_address}"
+    
+class Marca(models.Model):
+    class Meta:
+        verbose_name = 'Marca'
+        verbose_name_plural = 'Marcas'
+    name = models.CharField(max_length=50)
+    categoria = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return self.name

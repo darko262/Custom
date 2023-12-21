@@ -10,4 +10,15 @@ class CategorySerializer(serializers.ModelSerializer):
             'name',
             'slug',
             'views',
+            'marca',
         ]
+
+class MarcaSerializer(serializers.ModelSerializer):
+    class Meta: 
+        model=Marca
+        fields=[
+            'id',
+            'name',
+            'categoria',
+        ]
+

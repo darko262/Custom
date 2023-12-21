@@ -3,6 +3,7 @@ from django.db import models
 from django.utils import timezone
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+from apps.category.models import Category, Marca
 def blog_thumbnail_directory(instance, filename):
     return 'blog/{0}/{1}'.format(instance.title, filename)
 
@@ -35,6 +36,8 @@ class Post(models.Model):
     views =         models.IntegerField(default=0, blank=True)
 
     status =        models.CharField(max_length=10, choices=options, default='draft')
+    category =      models.ForeignKey(Category, on_delete=models.PROTECT, blank=True, null=True)
+    marca = models.ForeignKey(Marca, on_delete=models.SET_NULL, null=True, blank=True)
 
     objects =           models.Manager()  # default manager
     postobjects =       PostObjects()  # custom manager
@@ -57,4 +60,3 @@ class ViewCount(models.Model):
 
     def __str__(self):
         return f"{self.ip_address}"
-    

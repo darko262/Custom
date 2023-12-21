@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import permissions
-from .models import Category
+from .models import Category, Marca
 
 
 class ListCategoriesView(APIView):
@@ -14,6 +14,7 @@ class ListCategoriesView(APIView):
     def get(self, request, format=None):
         if Category.objects.all().exists():
             categories = Category.objects.all()
+            marcas = Marca.objects.all()
 
             result = []
 
@@ -25,19 +26,37 @@ class ListCategoriesView(APIView):
                     item['slug']=category.slug
                     item['views']=category.views
                 
-                    item['sub_categories'] = []
-                    for sub_category in categories:
-                        sub_item = {}
-                        if sub_category.parent and sub_category.parent.id == category.id:
-                            sub_item['id']=sub_category.id
-                            sub_item['name']=sub_category.name
-                            sub_item['slug']=sub_category.slug
-                            sub_item['views']=sub_category.views
+                    item['marca'] = []
+                    
+                    for marca in marcas:
+                        modelo = {}
+                        modelo['id']=marca.id
+                        modelo['name']=marca.name
+                        item['marca'].append(modelo)
+                            
+                    # for sub_category in categories:
+                    #     sub_item = {}
+                    #     if sub_category.parent and sub_category.parent.id == category.id:
+                    #         sub_item['id']=sub_category.id
+                    #         sub_item['name']=sub_category.name
+                    #         sub_item['slug']=sub_category.slug
+                    #         sub_item['views']=sub_category.views
 
-                            item['sub_categories'].append(sub_item)
+                    #         item['sub_categories'].append(sub_item)
                     
                     result.append(item)
+                    
 
             return Response({'categories': result}, status=status.HTTP_200_OK)
+        else:
+            return Response({'error': 'No categories found'}, status=status.HTTP_404_NOT_FOUND)
+        
+class Search(APIView):
+    permission_classes = (permissions.AllowAny,)
+    def search(request):
+
+        if 'keyword' in request.GET:
+            keyword = request.GET['keyword']
+            return Response({'categories': keyword}, status=status.HTTP_200_OK)
         else:
             return Response({'error': 'No categories found'}, status=status.HTTP_404_NOT_FOUND)

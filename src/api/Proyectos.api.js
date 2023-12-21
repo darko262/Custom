@@ -13,3 +13,8 @@ export const getProyecto = (slug) =>{
     
 
 }
+
+export const getproyectosByCategory = (slug) =>{
+  const parametro = slug.slug
+  return axios.get(`${process.env.REACT_APP_API_URL}/api/blog/category?slug=${parametro}`)
+}
