@@ -7,4 +7,5 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display_links = ('name', )
     list_per_page = 25
 
-admin.site.register(Category,CategoryAdmin)
+# admin.site.register(Category,CategoryAdmin)
+admin.site.register(Category)
