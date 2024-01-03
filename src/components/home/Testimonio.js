@@ -1,6 +1,33 @@
+
+import { useEffect, useState } from "react"
+import axios from "axios";
 export function Testimonio() {
 
-    return(
+    useEffect(() => {
+        // Función para obtener el valor de una cookie por su nombre
+        window.scrollTo(0, 0)
+        const getCookie = (name) => {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(";").shift();
+        };
+        const token = getCookie("csrftoken");
+        setCsrfToken(token);
+    }, []);
+    const [csrfToken, setCsrfToken] = useState('');
+    const [formData, setFormData] = useState({
+        name: '',
+        comentario:'',
+    });
+    const {
+        name,
+        comentario
+    } = formData;
+    
+    
+
+
+    return (
         <section className="bg-black">
             <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6 bg-black">
                 <figure className="max-w-screen-md mx-auto">
@@ -11,11 +38,11 @@ export function Testimonio() {
                         <p className="text-2xl font-medium text-white">"Custom garage is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
                     </blockquote>
                     <figcaption className="flex items-center justify-center mt-6 space-x-3">
-                        <img className="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile "/>
-                            <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                                <div className="pr-3 font-medium text-white">Micheal Gough</div>
-                                <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">CEO at Google</div>
-                            </div>
+                        <img className="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile " />
+                        <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+                            <div className="pr-3 font-medium text-white">Micheal Gough</div>
+                            <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">CEO at Google</div>
+                        </div>
                     </figcaption>
                 </figure>
             </div>
