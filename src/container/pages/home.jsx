@@ -4,6 +4,7 @@ import { Hero } from '../../components/home/Hero'
 import { About } from '../../components/home/AboutService'
 import { Trabajos } from '../../components/home/Trabajos'
 import { motion as m } from 'framer-motion'
+import { TestimonioHome } from '../../components/home/TestimonioHome'
 
 
 function Home() {
@@ -23,7 +24,8 @@ function Home() {
 			<About />
 			<Trabajos />
 			<Precios />
-			<Testimonio />
+			<TestimonioHome/>
+			{/* <Testimonio /> */}
 			<Contancto />
 		</m.div>
 		

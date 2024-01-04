@@ -18,3 +18,7 @@ export const getproyectosByCategory = (slug) =>{
   const parametro = slug.slug
   return axios.get(`${process.env.REACT_APP_API_URL}/api/blog/category?slug=${parametro}`)
 }
+
+export const getAllComent = ()=> {
+  return axios.get(`http://127.0.0.1:8000/api/contact/list`);
+};

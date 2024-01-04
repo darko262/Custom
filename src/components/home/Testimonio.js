@@ -17,35 +17,101 @@ export function Testimonio() {
     const [csrfToken, setCsrfToken] = useState('');
     const [formData, setFormData] = useState({
         name: '',
-        comentario:'',
+        comentario: '',
     });
     const {
         name,
         comentario
     } = formData;
-    
-    
+
+    const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+    const onSubmit = e => {
+        e.preventDefault();
+
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+                "X-CSRFToken": csrfToken,
+            }
+        };
+
+        const formData = new FormData()
+        formData.append('name', name)
+        formData.append('comentario', comentario)
+
+        const fetchData = async () => {
+            const res = await axios.post(`http://127.0.0.1:8000/api/contact/`, formData, config)
+            // const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/contact/`, formData, config)
+            console.log(res.data)
+            if (res.data.status === 'success') {
+                console.log(res.data)
+                setFormData({
+                    name: '',
+                    comentario: '',
+
+                })
+                alert('Tu comentario fue creado!')
+            } else {
+
+                alert('Error al crear comentario.')
+            }
+        }
+        fetchData()
+
+    }
 
 
     return (
-        <section className="bg-black">
-            <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6 bg-black">
-                <figure className="max-w-screen-md mx-auto">
-                    <svg className="h-12 mx-auto mb-3 text-white" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor" />
-                    </svg>
-                    <blockquote>
-                        <p className="text-2xl font-medium text-white">"Custom garage is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
-                    </blockquote>
-                    <figcaption className="flex items-center justify-center mt-6 space-x-3">
-                        <img className="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile " />
-                        <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                            <div className="pr-3 font-medium text-white">Micheal Gough</div>
-                            <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">CEO at Google</div>
-                        </div>
-                    </figcaption>
-                </figure>
+        <section className="bg-black h-screen pt-24">
+            <div
+                class="max-w-md mx-auto relative overflow-hidden z-10 bg-gray-800 p-8 rounded-lg shadow-md before:w-24 before:h-24 before:absolute before:bg-purple-600 before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-sky-400 after:rounded-full after:-z-10 after:blur-xl after:top-24 after:-right-12"
+            >
+                <h2 class="text-2xl font-bold text-white mb-6">Update Your Profile</h2>
+
+                <form method="post" onSubmit={e => onSubmit(e)}>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-300" for="name"
+                        >Full Name</label
+                        >
+                        <input
+                            class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
+                            type="text"
+                            name="name"
+                            value={name}
+                            required
+                            onChange={e => onChange(e)}
+                            autoComplete="name"
+                        />
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-300" 
+                        >comentario</label
+                        >
+                        <input
+                            class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
+                            name="comentario"
+                            value={comentario}
+                            required
+                            onChange={e => onChange(e)}
+                            autoComplete="comentario"
+                        />
+                    </div>
+
+                 
+
+                    <div class="flex justify-end">
+                        <button
+                            class="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80"
+                            type="submit"
+                        >
+                            Update Profile
+                        </button>
+                    </div>
+                </form>
             </div>
+
         </section>
     )
+
 }
