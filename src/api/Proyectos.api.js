@@ -20,7 +20,7 @@ export const getproyectosByCategory = (slug) =>{
 }
 
 export const getAllComent = ()=> {
-  return axios.get(`${process.env.REACT_APP_API_URL}api/contact/list`);
+  return axios.get(`${process.env.REACT_APP_API_URL}/api/contact/list`);
 };
 export const postComent = (formData, config) => {
   return axios.post(`${process.env.REACT_APP_API_URL}/api/contact/`, formData, config);
