@@ -9,16 +9,27 @@ import environ
 env = environ.Env()
 import pyrebase
 import json
+from decouple import config
 
+
+# Firebase Configuration
+FIREBASE_API_KEY = config('FIREBASE_API_KEY')
+FIREBASE_AUTH_DOMAIN = config('FIREBASE_AUTH_DOMAIN')
+FIREBASE_DATABASE_URL = config('FIREBASE_DATABASE_URL')
+FIREBASE_PROJECT_ID = config('FIREBASE_PROJECT_ID')
+FIREBASE_STORAGE_BUCKET = config('FIREBASE_STORAGE_BUCKET')
+FIREBASE_MESSAGING_SENDER_ID = config('FIREBASE_MESSAGING_SENDER_ID')
+FIREBASE_APP_ID = config('FIREBASE_APP_ID')
+FIREBASE_MEASUREMENT_ID = config('FIREBASE_MEASUREMENT_ID')
 config = {
-  'apiKey': "AIzaSyCHOyJfIdHi8pA1fGo955VYP-7qaiDEWjE",
-  'authDomain': "custom-garage-8c69a.firebaseapp.com",
-  'databaseURL':'https://custom-garage-8c69a-default-rtdb.firebaseio.com',
-  'projectId': "custom-garage-8c69a",
-  'storageBucket': "custom-garage-8c69a.appspot.com",
-  'messagingSenderId': "1063676141529",
-  'appId': "1:1063676141529:web:e6925ae3d4a69c98b083c8",
-  'measurementId': "G-TYY3GM8KZL"
+    'apiKey': FIREBASE_API_KEY,
+    'authDomain': FIREBASE_AUTH_DOMAIN,
+    'databaseURL': FIREBASE_DATABASE_URL,
+    'projectId': FIREBASE_PROJECT_ID,
+    'storageBucket': FIREBASE_STORAGE_BUCKET,
+    'messagingSenderId': FIREBASE_MESSAGING_SENDER_ID,
+    'appId': FIREBASE_APP_ID,
+    'measurementId': FIREBASE_MEASUREMENT_ID,
 }
 firebase = pyrebase.initialize_app(config)
 database=firebase.database()

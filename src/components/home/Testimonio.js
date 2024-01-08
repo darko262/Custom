@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react"
-import axios from "axios";
+import { postComent}	from '../../api/Proyectos.api'
 export function Testimonio() {
 
     useEffect(() => {
@@ -40,23 +40,27 @@ export function Testimonio() {
         formData.append('comentario', comentario)
 
         const fetchData = async () => {
-            const res = await axios.post(`http://127.0.0.1:8000/api/contact/`, formData, config)
-            // const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/contact/`, formData, config)
-            console.log(res.data)
-            if (res.data.status === 'success') {
-                console.log(res.data)
-                setFormData({
-                    name: '',
-                    comentario: '',
+            try {
+                const res = await postComent(formData, config);
+                console.log(res.data);
 
-                })
-                alert('Tu comentario fue creado!')
-            } else {
-
-                alert('Error al crear comentario.')
+                if (res.data.status === 'success') {
+                    console.log(res.data);
+                    setFormData({
+                        name: '',
+                        comentario: '',
+                    });
+                    alert('Tu comentario fue creado!');
+                } else {
+                    alert('Error al crear comentario.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Hubo un error en la solicitud.');
             }
-        }
-        fetchData()
+        };
+
+        fetchData();
 
     }
 
@@ -85,7 +89,7 @@ export function Testimonio() {
                     </div>
 
                     <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-300" 
+                        <label class="block text-sm font-medium text-gray-300"
                         >comentario</label
                         >
                         <input
@@ -98,7 +102,7 @@ export function Testimonio() {
                         />
                     </div>
 
-                 
+
 
                     <div class="flex justify-end">
                         <button
