@@ -1,7 +1,7 @@
 
 import { motion as m } from 'framer-motion'
 import { Testimonio } from '../../components/home/Testimonio'
-import { Hero } from '../../components/home/Hero'
+
 function Comentario() {
 	return (
 		<m.div

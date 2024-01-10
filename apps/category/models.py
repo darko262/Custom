@@ -36,6 +36,7 @@ class Marca(models.Model):
         verbose_name = 'Marca'
         verbose_name_plural = 'Marcas'
     name = models.CharField(max_length=50)
+    slug = models.SlugField(max_length=255, unique=True)
     categoria = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):

@@ -1,4 +1,3 @@
-import { Testimonio } from '../../components/home/Testimonio'
 import { Contancto, Precios } from '../../components/home/Contacto'
 import { Hero } from '../../components/home/Hero'
 import { About } from '../../components/home/AboutService'

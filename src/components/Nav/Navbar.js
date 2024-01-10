@@ -59,7 +59,7 @@ export default function Navbar() {
                 <motion.div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto ">
                     <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
                         <img src={icono} className="h-8" alt="Flowbite Logo" />
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Custom Garage</span>
+                        <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Custom Garage</span>
                     </a>
                     <button onClick={handleNav} className="md:hidden rounded-full  transition-all ease-in-out duration-300 z-10 ">
                         {!nav ? <AiOutlineClose size={30} className='text-red-500   transition-all ease-in-out duration-300  ' /> : <AiOutlineMenu size={30} className='text-green-500    transition-all  ease-in-out duration-300 ' />}

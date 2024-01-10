@@ -1,4 +1,4 @@
-import { HeroBlog } from '../../components/Blog/Heroblog'
+
 import { useParams } from 'react-router-dom'
 
 import { motion as m } from 'framer-motion'
@@ -16,7 +16,7 @@ function Category() {
 			transition={{ duration: 0.75, ease: 'easeInOut' }}
 			exit={{ opacity: 0 }}
 		>
-			<HeroBlogCategory slug={slug} />
+			<HeroBlogCategory slug={slug&&slug} />
 			{/* <Contancto/> */}
 			{/* <Footer/> */}
 		</m.div>

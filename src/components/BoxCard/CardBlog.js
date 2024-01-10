@@ -42,7 +42,7 @@ export function CardBlog2({ title, descripcion, imagen, slug }) {
 export function CardBlog3({ title, descripcion, imagen, slug }) {
     return (
 
-        <a href={`blog/${slug}`} className='bg-cover bg-center group  py-5 transition-all duration-300 ease-in-out'  >
+        <a href={`/blog/${slug}`} className='bg-cover bg-center group  py-5 transition-all duration-300 ease-in-out'  >
             <div className=" h-[20rem] md:h-[25rem] w-full py-2  px-4  flex flex-1 justify-end items-center flex-col  bg-center bg-cover bg-no-repeat rounded-3xl transition-all duration-300  " style={{ backgroundImage: `url(${imagen})` }}>
                 <div className='  bg-black/60  flex flex-col justify-center items-center rounded-3xl text-white w-full py-3 px-4 group-hover:h-full transition-all  duration-1000  ease-in-out group-hover:scale-100  scale-90'>
                     <h3 className=' text-3xl font-rocket px-2'>{title}</h3>

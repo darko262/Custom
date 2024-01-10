@@ -4,6 +4,7 @@ import { CardBlog2 } from "../BoxCard/CardBlog"
 import { getAllProyectos, getproyectosByCategory } from "../../api/Proyectos.api";
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { HeaderCategory } from "../BoxCard/CategoryHorizontal";
 export function HeroBlogCategory(slug) {
     const [proyect, setProyect] = useState([]);
     const [primero, serPrimero] = useState([]);
@@ -35,16 +36,10 @@ export function HeroBlogCategory(slug) {
     return (
         <section className="bg-gradient-to-b bg-[#17181d] min-h-screen">
             <div className=" py-24   mx-auto w-[80%] ">
-                <div className="   scroll-smooth whitespace-nowrap overflow-x-scroll scrollbar-hide ">
-                    <a href="#" className="bg-blue-100 hover:bg-blue-200 text-blue-800 text-xl  font-medium  rounded dark:bg-gray-700 inline-block  me-1  dark:text-blue-400 border border-blue-400 ">All</a>
-                    <a href="#" className="bg-blue-100 hover:bg-blue-200 text-blue-800 text-xl font-medium  rounded dark:bg-gray-700 inline-block  me-1 dark:text-blue-400 border border-blue-400 ">BMW</a>
 
-                    <a href="#" className="bg-blue-100 hover:bg-blue-200 text-blue-800 text-xl font-medium  rounded dark:bg-gray-700 inline-block  me-1 dark:text-blue-400 border border-blue-400 ">Susuky</a>
-                    <a href="#" className="bg-blue-100 hover:bg-blue-200 text-blue-800 text-xl font-medium  rounded dark:bg-gray-700 inline-block  me-1 dark:text-blue-400 border border-blue-400 ">Honda</a>
-                    <a href="#" className="bg-blue-100 hover:bg-blue-200 text-blue-800 text-xl font-medium  rounded dark:bg-gray-700 inline-block  me-1 dark:text-blue-400 border border-blue-400 ">Susuky</a>
-                    <a href="#" className="bg-blue-100 hover:bg-blue-200 text-blue-800 text-xl font-medium  rounded dark:bg-gray-700 inline-block  me-1 dark:text-blue-400 border border-blue-400 ">Honda</a>
+                <HeaderCategory />
 
-                </div>
+
             </div>
 
             <div className="md:w-[90%] w-[95%] h-full mx-auto">
