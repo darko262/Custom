@@ -8,7 +8,7 @@ export function HeroAbout() {
 
 
     return (
-        <section className="min-h-screen flex flex-col justify-center items-center  bg-center  bg-no-repeat   bg-cover py-14 md:pt-0" style={{ backgroundImage: `url(${fondo1})` }}>
+        <section className="min-h-screen flex flex-col justify-center items-center  bg-center  bg-no-repeat   bg-cover py-14 " style={{ backgroundImage: `url(${fondo1})` }}>
            <h1 className="text-orange-700 text-6xl font-rocket  "> about </h1>
             <div className=" bg-white flex-col md:flex-row flex  content-center md:min-h-[25rem] w-full text-center h-[13rem] rounded-xl md:rounded-none flex-wrap " >
 
@@ -44,7 +44,7 @@ export function HeroAbout() {
 
 
             </div>
-            <div className=" flex absolute bottom-0">
+            <div className=" flex ">
             <Datos texto={"black"} />
             </div>
 
