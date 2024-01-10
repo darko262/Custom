@@ -32,6 +32,7 @@ class ListCategoriesView(APIView):
                         modelo = {}
                         modelo['id']=marca.id
                         modelo['name']=marca.name
+                        modelo['slug']=marca.slug
                         item['marca'].append(modelo)
                             
                     # for sub_category in categories:
