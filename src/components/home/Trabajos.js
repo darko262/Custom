@@ -6,7 +6,7 @@ import { useMediaQuery } from '@react-hook/media-query';
 import { getAllProyectos } from "../../api/Proyectos.api";
 import { MdChevronRight, MdOutlineChevronLeft } from "react-icons/md"
 import { BoteneHomeDos } from "../Botones/Botones";
-
+import imagen3 from "../../assets/foto2.jpg"
 export function Trabajos() {
 
     const [backgroundImage, setBackgroundImage] = useState('');
@@ -120,15 +120,15 @@ export function Trabajos() {
                                         Proyecto
                                     </span>{parrafo}
 
-                                    <BoteneHomeDos nombre=" Seguir leyendo" href={`blog/${slug}`} />
+                                    <BoteneHomeDos nombre=" Seguir leyendo" href={`/blog/${slug}`} />
 
                                 </p>
 
-                                <div className="rounded-lg   row-span-2  flex items-center relative gap-2   ">
+                                <div className="rounded-lg   row-span-2  flex items-center relative gap-2 ">
                                     {/* Contenido de la sección */}
                                     <MdOutlineChevronLeft size={40} onClick={sliderLeft} className=" cursor-pointer hidden lg:block" />
                                     {/* Tarjetas en la esquina inferior derecha */}
-                                    <div id="slider" className="overflow-x-auto  snap-x scroll-smooth whitespace-nowrap  h-full w-full  scrollbar-hide  ">
+                                    <div id="slider" className=" overflow-x-auto snap-x scroll-smooth whitespace-nowrap  h-full w-full scrollbar-hide   ">
 
                                         {proyect.map((proyect) => ((
                                             <Card
